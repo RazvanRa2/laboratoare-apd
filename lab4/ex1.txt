@@ -1,0 +1,27 @@
+Elements: {0, 2w, 4w, ... , N}
+Devided into P groups.
+N is a power of 2. So can w be.
+
+> No of elements in a group:
+    N / P.
+
+> first and last element from each group
+  VALUE:
+  (2^(Tid * (N / P)))
+  0 2 4 8 16 32
+  3
+  0 2
+  4 8
+  16 32
+
+  0 = 2^(0 * 2)
+  4 = 2 ^(1 * 2)
+  16 = 2 ^(2 * 2)
+  INDEX IN ARRAY:
+  log2(2^(Tid * (N / P))) = Tid * (N/P)
+
+> last element from each group
+  VALUE:
+  (2^(Tid * (N / P) - 1))
+  INDEX:
+  log2(2^(Tid * (N / P))) = Tid * (N/P)

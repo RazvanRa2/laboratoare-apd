@@ -1,0 +1,51 @@
+N elements
+P groups
+Each group has a T_ID (0 -> P-1)
+--------------------
+General formulas that represent the first and last element in each group?
+--------------------
+
+No. of groups = ceil(N / P);
+Example 1:
+N = 9
+P = 3;
+No. of groups = ceil(9 / 3) = 3;
+Example 2:
+N = 14;
+P = 4;
+No. of groups = (14 / 4) = 4;
+
+
+FirstElem(T_ID) = T_ID * ceil(N / P);
+Example 1:
+N = 9;
+P = 3;
+T_0 = 0, T_1 = 1, T_2 = 2;
+FirstElem(T_0) = 3 * 0 = 0;
+FirstElem(T_1) = 3 * 1 = 3;
+FirstElem(T_2) = 3 * 2 = 6;
+Example 2:
+N = 14;
+P = 4;
+T_0 = 0; T_1 = 1; T_2 = 2; T_3 = 3;
+FirstElem(T_0) = 4 * 0 = 0;
+FirstElem(T_1) = 4 * 1 = 4;
+FirstElem(T_2) = 4 * 2 = 8;
+FirstElem(T_3) = 4 * 3 = 12;
+
+LastElem(T_ID) = min(N - 1, (T_ID + 1) * ceil(N / P) - 1);
+Example 1:
+N = 9;
+P = 3;
+T_0 = 0, T_1 = 1, T_2 = 2;
+LastElem(T_0) = 3 * 1 - 1 = 2;
+LastElem(T_1) = 3 * 2 - 1 = 5;
+LastElem(T_2) = 3 * 3 - 1 =  9 - 1 = 8;
+Example2:
+N = 14;
+P = 4;
+T_0 = 0; T_1 = 1; T_2 = 2; T_3 = 3;
+LastElem(T_0) = 4 * 1 - 1 = 3;
+LastElem(T_1) = 4 * 2 - 1 = 7;
+LastElem(T_2) = 4 * 3 - 1 = 11;
+LastElem(T_3) = 14 - 1 = 13;
