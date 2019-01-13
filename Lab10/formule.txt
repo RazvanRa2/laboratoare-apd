@@ -1,0 +1,13 @@
+Reduce
+rank = pow(2, k), k in (1, log2(nrProcesses), k++)
+rank = rank * 3 / 2
+
+Scan
+send to rank + pow(2, k), k in (0, log2(nrProcesses) / 2, k++)
+
+Broadcast
+if (rank == 0) {
+	MPI_Send to pow(2, k), k in (0, log2(nrProcesses), k++)
+} else {
+	MPI_Send to rank + pow(2, k), k in (log2(rank) + 1, log2(nrProcesses - rank), k++)
+}
